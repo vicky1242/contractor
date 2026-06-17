@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sterling Plumbing & HVAC — Austin TX</title>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --navy:#0F2238;
+  --navy-lt:#1B3A5C;
+  --orange:#E85D2C;
+  --orange-lt:#FF7A47;
+  --steel:#5C7080;
+  --paper:#F6F7F8;
+  --white:#FFFFFF;
+  --ink:#16202B;
+  --green:#1E8E5A;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--paper);color:var(--ink);overflow-x:hidden}
+
+/* TOP BAR */
+.topbar{
+  background:var(--navy);color:rgba(255,255,255,0.7);
+  font-size:13px;padding:8px 64px;
+  display:flex;justify-content:space-between;align-items:center;
+}
+.topbar a{color:rgba(255,255,255,0.7);text-decoration:none}
+.topbar-left{display:flex;gap:24px;align-items:center}
+.topbar-left span{display:flex;align-items:center;gap:6px}
+.badge-24{
+  background:var(--orange);color:white;font-size:11px;font-weight:700;
+  padding:3px 10px;border-radius:2px;letter-spacing:0.05em;
+}
+
+/* NAV */
+nav{
+  position:sticky;top:0;z-index:200;
+  background:var(--white);
+  display:flex;align-items:center;justify-content:space-between;
+  padding:18px 64px;
+  border-bottom:3px solid var(--orange);
+  box-shadow:0 2px 12px rgba(0,0,0,0.04);
+}
+.logo{display:flex;align-items:center;gap:10px}
+.logo-mark{
+  width:40px;height:40px;background:var(--navy);border-radius:4px;
+  display:flex;align-items:center;justify-content:center;
+  color:var(--orange);font-size:20px;font-weight:900;font-family:'Archivo',sans-serif;
+}
+.logo-text{font-family:'Archivo',sans-serif;font-size:19px;font-weight:700;color:var(--navy);line-height:1.1}
+.logo-text span{display:block;font-size:11px;font-weight:500;color:var(--steel);letter-spacing:0.08em;text-transform:uppercase}
+.nav-links{display:flex;gap:36px;list-style:none}
+.nav-links a{
+  font-size:14px;font-weight:600;color:var(--ink);text-decoration:none;
+  transition:color 0.2s;
+}
+.nav-links a:hover{color:var(--orange)}
+.nav-cta{
+  background:var(--orange);color:white;text-decoration:none;
+  padding:13px 28px;border-radius:4px;font-size:14px;font-weight:700;
+  transition:background 0.2s;display:flex;align-items:center;gap:8px;
+}
+.nav-cta:hover{background:#D14E1F}
+
+/* HERO */
+.hero{
+  position:relative;min-height:640px;
+  display:flex;align-items:center;
+  overflow:hidden;
+}
+.hero-img{
+  position:absolute;inset:0;
+  background-image:url('https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=1920&q=85');
+  background-size:cover;background-position:center;
+}
+.hero-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(100deg,rgba(15,34,56,0.96) 0%,rgba(15,34,56,0.88) 45%,rgba(15,34,56,0.5) 75%,rgba(15,34,56,0.2) 100%);
+}
+.hero-inner{
+  position:relative;padding:0 64px;max-width:680px;
+  opacity:0;transform:translateY(24px);
+  animation:rise 0.9s cubic-bezier(0.22,1,0.36,1) 0.3s forwards;
+}
+@keyframes rise{to{opacity:1;transform:translateY(0)}}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(232,93,44,0.15);border:1px solid var(--orange);
+  color:var(--orange-lt);font-size:13px;font-weight:600;
+  padding:8px 16px;border-radius:99px;margin-bottom:24px;
+}
+.pulse-dot{
+  width:8px;height:8px;border-radius:50%;background:var(--orange-lt);
+  animation:pulse 1.6s ease-in-out infinite;
+}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.4;transform:scale(0.8)}}
+.hero-title{
+  font-family:'Archivo',sans-serif;font-size:clamp(38px,5.5vw,58px);
+  font-weight:900;line-height:1.08;color:white;margin-bottom:20px;
+  letter-spacing:-0.01em;
+}
+.hero-title em{font-style:normal;color:var(--orange-lt)}
+.hero-sub{
+  font-size:17px;line-height:1.6;color:rgba(255,255,255,0.75);
+  margin-bottom:36px;font-weight:300;max-width:520px;
+}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:40px}
+.btn-cta{
+  background:var(--orange);color:white;text-decoration:none;
+  padding:17px 32px;border-radius:4px;font-size:15px;font-weight:700;
+  display:flex;align-items:center;gap:10px;transition:all 0.25s;
+  box-shadow:0 8px 24px rgba(232,93,44,0.3);
+}
+.btn-cta:hover{background:#D14E1F;transform:translateY(-2px)}
+.btn-secondary{
+  background:rgba(255,255,255,0.08);color:white;text-decoration:none;
+  padding:17px 32px;border-radius:4px;font-size:15px;font-weight:600;
+  border:1px solid rgba(255,255,255,0.25);display:flex;align-items:center;gap:10px;
+  transition:all 0.25s;
+}
+.btn-secondary:hover{background:rgba(255,255,255,0.15)}
+.hero-trust{display:flex;gap:32px;flex-wrap:wrap}
+.trust-item{display:flex;align-items:center;gap:10px}
+.trust-num{font-family:'Archivo',sans-serif;font-size:26px;font-weight:800;color:white}
+.trust-label{font-size:12px;color:rgba(255,255,255,0.5);line-height:1.3}
+
+/* TRUST BAND */
+.trust-band{
+  background:var(--navy);padding:28px 64px;
+  display:flex;justify-content:center;gap:56px;flex-wrap:wrap;
+  border-bottom:1px solid rgba(255,255,255,0.06);
+}
+.tband-item{
+  display:flex;align-items:center;gap:12px;color:rgba(255,255,255,0.6);
+  font-size:13px;font-weight:600;
+  opacity:0;transform:translateY(10px);
+  transition:opacity 0.5s,transform 0.5s;
+}
+.tband-item.vis{opacity:1;transform:translateY(0)}
+.tband-icon{
+  width:36px;height:36px;border-radius:50%;
+  background:rgba(232,93,44,0.15);display:flex;align-items:center;justify-content:center;
+  color:var(--orange-lt);font-size:18px;flex-shrink:0;
+}
+
+/* SERVICES */
+.services{padding:96px 64px}
+.sec-head{text-align:center;margin-bottom:56px;max-width:640px;margin-left:auto;margin-right:auto}
+.sec-eyebrow{
+  font-size:13px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;
+  color:var(--orange);margin-bottom:14px;
+}
+.sec-title{
+  font-family:'Archivo',sans-serif;font-size:clamp(30px,4vw,44px);
+  font-weight:800;color:var(--navy);line-height:1.15;margin-bottom:14px;
+}
+.sec-desc{font-size:16px;color:var(--steel);line-height:1.7}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.service-card{
+  background:white;border-radius:10px;overflow:hidden;
+  border:1px solid rgba(15,34,56,0.08);
+  opacity:0;transform:translateY(24px);
+  transition:opacity 0.6s,transform 0.6s,box-shadow 0.3s,border-color 0.3s;
+}
+.service-card.vis{opacity:1;transform:translateY(0)}
+.service-card:hover{
+  box-shadow:0 20px 48px rgba(15,34,56,0.12);
+  border-color:transparent;
+}
+.service-img{height:200px;overflow:hidden;position:relative}
+.service-img img{width:100%;height:100%;object-fit:cover;transition:transform 0.6s}
+.service-card:hover .service-img img{transform:scale(1.08)}
+.service-badge{
+  position:absolute;top:14px;left:14px;
+  background:var(--orange);color:white;font-size:11px;font-weight:700;
+  padding:5px 12px;border-radius:99px;letter-spacing:0.04em;
+}
+.service-body{padding:24px}
+.service-name{
+  font-family:'Archivo',sans-serif;font-size:19px;font-weight:700;
+  color:var(--navy);margin-bottom:8px;
+}
+.service-text{font-size:14px;color:var(--steel);line-height:1.65;margin-bottom:16px}
+.service-link{
+  font-size:13px;font-weight:700;color:var(--orange);text-decoration:none;
+  display:flex;align-items:center;gap:6px;
+}
+
+/* PROCESS */
+.process{background:var(--navy);padding:96px 64px}
+.process .sec-eyebrow{color:var(--orange-lt)}
+.process .sec-title{color:white}
+.process .sec-desc{color:rgba(255,255,255,0.55)}
+.process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative}
+.process-step{
+  text-align:center;padding:0 20px;position:relative;
+  opacity:0;transform:translateY(20px);
+  transition:opacity 0.6s,transform 0.6s;
+}
+.process-step.vis{opacity:1;transform:translateY(0)}
+.process-step::after{
+  content:'';position:absolute;top:32px;right:-10px;width:20px;height:1px;
+  background:rgba(232,93,44,0.4);
+}
+.process-step:last-child::after{display:none}
+.process-num{
+  width:64px;height:64px;border-radius:50%;
+  background:rgba(232,93,44,0.12);border:2px solid var(--orange);
+  display:flex;align-items:center;justify-content:center;margin:0 auto 20px;
+  font-family:'Archivo',sans-serif;font-size:24px;font-weight:800;color:var(--orange-lt);
+}
+.process-title{font-family:'Archivo',sans-serif;font-size:17px;font-weight:700;color:white;margin-bottom:10px}
+.process-text{font-size:13px;color:rgba(255,255,255,0.45);line-height:1.6}
+
+/* GALLERY / BEFORE-AFTER */
+.work-section{padding:96px 64px}
+.work-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.work-item{
+  border-radius:10px;overflow:hidden;aspect-ratio:1/1;position:relative;
+  opacity:0;transform:scale(0.96);
+  transition:opacity 0.6s,transform 0.6s;
+}
+.work-item.vis{opacity:1;transform:scale(1)}
+.work-item img{width:100%;height:100%;object-fit:cover;transition:transform 0.6s}
+.work-item:hover img{transform:scale(1.1)}
+.work-overlay{
+  position:absolute;inset:0;background:linear-gradient(to top,rgba(15,34,56,0.85),transparent 55%);
+  display:flex;align-items:flex-end;padding:16px;
+  opacity:0;transition:opacity 0.3s;
+}
+.work-item:hover .work-overlay{opacity:1}
+.work-overlay span{color:white;font-size:13px;font-weight:600}
+
+/* TESTIMONIALS */
+.reviews{background:var(--paper);padding:96px 64px}
+.reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.review-card{
+  background:white;border-radius:10px;padding:32px 28px;
+  border:1px solid rgba(15,34,56,0.06);
+  opacity:0;transform:translateY(20px);
+  transition:opacity 0.6s,transform 0.6s,box-shadow 0.3s;
+}
+.review-card.vis{opacity:1;transform:translateY(0)}
+.review-card:hover{box-shadow:0 16px 40px rgba(15,34,56,0.08)}
+.review-stars{color:var(--orange);font-size:14px;letter-spacing:2px;margin-bottom:16px}
+.review-text{font-size:14.5px;color:var(--ink);line-height:1.75;margin-bottom:22px}
+.review-author{display:flex;align-items:center;gap:12px}
+.review-avatar{
+  width:44px;height:44px;border-radius:50%;
+  background:var(--navy);color:white;display:flex;align-items:center;justify-content:center;
+  font-size:14px;font-weight:700;font-family:'Archivo',sans-serif;
+}
+.review-name{font-size:14px;font-weight:700;color:var(--navy)}
+.review-loc{font-size:12px;color:var(--steel)}
+
+/* FINAL CTA */
+.final-cta{
+  position:relative;padding:90px 64px;text-align:center;overflow:hidden;
+}
+.final-cta-bg{position:absolute;inset:0;background:var(--navy)}
+.final-cta-pattern{
+  position:absolute;inset:0;opacity:0.08;
+  background-image:repeating-linear-gradient(45deg,var(--orange) 0px,var(--orange) 1px,transparent 1px,transparent 24px);
+}
+.final-cta-inner{position:relative;max-width:600px;margin:0 auto}
+.final-cta-title{
+  font-family:'Archivo',sans-serif;font-size:clamp(30px,4.5vw,46px);
+  font-weight:800;color:white;margin-bottom:16px;line-height:1.15;
+}
+.final-cta-title span{color:var(--orange-lt)}
+.final-cta-sub{font-size:16px;color:rgba(255,255,255,0.55);margin-bottom:36px}
+.final-cta-btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+
+/* FOOTER */
+footer{background:#081420;padding:56px 64px 28px}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;padding-bottom:36px;border-bottom:1px solid rgba(255,255,255,0.06)}
+.f-logo{display:flex;align-items:center;gap:10px;margin-bottom:14px}
+.f-tagline{font-size:13px;color:rgba(255,255,255,0.3);line-height:1.7;max-width:240px}
+.f-title{font-size:12px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--orange-lt);margin-bottom:18px}
+.f-links{display:flex;flex-direction:column;gap:10px}
+.f-links a{font-size:13.5px;color:rgba(255,255,255,0.38);text-decoration:none;transition:color 0.2s}
+.f-links a:hover{color:var(--orange-lt)}
+.footer-bottom{display:flex;justify-content:space-between;padding-top:24px;flex-wrap:wrap;gap:10px}
+.footer-bottom span{font-size:12px;color:rgba(255,255,255,0.2)}
+.footer-bottom span.cred{color:var(--orange-lt)}
+
+@media(max-width:900px){
+  .topbar{display:none}
+  nav{padding:16px 20px}
+  .nav-links{display:none}
+  .hero-inner{padding:0 24px}
+  .trust-band{padding:24px 20px;gap:24px}
+  .services,.process,.work-section,.reviews,.final-cta{padding:56px 24px}
+  .services-grid,.reviews-grid{grid-template-columns:1fr}
+  .process-grid{grid-template-columns:1fr 1fr;gap:32px 16px}
+  .process-step::after{display:none}
+  .work-grid{grid-template-columns:1fr 1fr}
+  footer{padding:40px 24px 20px}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:28px}
+}
+@media(prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-left">
+    <span><i>&#128222;</i> (512) 555-0173</span>
+    <span>Licensed &amp; Insured · TX #PL-48291</span>
+  </div>
+  <span class="badge-24">24/7 Emergency Service</span>
+</div>
+
+<nav>
+  <div class="logo">
+    <div class="logo-mark">S</div>
+    <div class="logo-text">Sterling<span>Plumbing &amp; HVAC</span></div>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#process">How It Works</a></li>
+    <li><a href="#work">Our Work</a></li>
+    <li><a href="#reviews">Reviews</a></li>
+  </ul>
+  <a href="tel:+15125550173" class="nav-cta"><i>&#128222;</i> Call Now</a>
+</nav>
+
+<section class="hero">
+  <div class="hero-img"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-inner">
+    <div class="hero-badge"><span class="pulse-dot"></span> Available now — same-day service</div>
+    <h1 class="hero-title">Austin's most <em>trusted</em><br>plumbing &amp; HVAC team</h1>
+    <p class="hero-sub">From burst pipes to AC breakdowns — our licensed technicians show up fast, fix it right, and stand behind every job.</p>
+    <div class="hero-btns">
+      <a href="tel:+15125550173" class="btn-cta">📞 Call (512) 555-0173</a>
+      <a href="#services" class="btn-secondary">View Services</a>
+    </div>
+    <div class="hero-trust">
+      <div class="trust-item"><div class="trust-num">15+</div><div class="trust-label">Years serving<br>Austin families</div></div>
+      <div class="trust-item"><div class="trust-num">4.9★</div><div class="trust-label">Average rating<br>500+ reviews</div></div>
+      <div class="trust-item"><div class="trust-num">2hr</div><div class="trust-label">Average<br>response time</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="trust-band">
+  <div class="tband-item"><div class="tband-icon">✓</div>Licensed &amp; Insured</div>
+  <div class="tband-item"><div class="tband-icon">⏱</div>Same-Day Service</div>
+  <div class="tband-item"><div class="tband-icon">💲</div>Upfront Pricing</div>
+  <div class="tband-item"><div class="tband-icon">🛠</div>1-Year Warranty</div>
+</div>
+
+<section class="services" id="services">
+  <div class="sec-head">
+    <p class="sec-eyebrow">What we fix</p>
+    <h2 class="sec-title">Full-service plumbing &amp; HVAC</h2>
+    <p class="sec-desc">One call covers it all — from a dripping faucet to a complete system replacement.</p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-img">
+        <img src="https://images.unsplash.com/photo-1607472829322-6093e3591b6a?w=600&q=85" alt="Plumber repairing pipes" loading="lazy">
+        <span class="service-badge">Most requested</span>
+      </div>
+      <div class="service-body">
+        <div class="service-name">Emergency Plumbing</div>
+        <p class="service-text">Burst pipes, clogged drains, water heater failures — we respond fast, day or night.</p>
+        <a href="tel:+15125550173" class="service-link">Get help now →</a>
+      </div>
+    </div>
+    <div class="service-card">
+      <div class="service-img">
+        <img src="https://images.unsplash.com/photo-1631545806609-91f0fc7b3fb0?w=600&q=85" alt="HVAC technician servicing AC unit" loading="lazy">
+      </div>
+      <div class="service-body">
+        <div class="service-name">AC &amp; Heating Repair</div>
+        <p class="service-text">Don't sweat through another Texas summer. Fast diagnostics and honest repair quotes.</p>
+        <a href="tel:+15125550173" class="service-link">Schedule a visit →</a>
+      </div>
+    </div>
+    <div class="service-card">
+      <div class="service-img">
+        <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=600&q=85" alt="Water heater installation" loading="lazy">
+      </div>
+      <div class="service-body">
+        <div class="service-name">Water Heater Install</div>
+        <p class="service-text">Tank or tankless — we help you choose the right system and install it right the first time.</p>
+        <a href="tel:+15125550173" class="service-link">Get a quote →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="process" id="process">
+  <div class="sec-head">
+    <p class="sec-eyebrow">How it works</p>
+    <h2 class="sec-title">Four steps to a fixed problem</h2>
+  </div>
+  <div class="process-grid">
+    <div class="process-step">
+      <div class="process-num">1</div>
+      <div class="process-title">Call or book online</div>
+      <div class="process-text">Tell us what's wrong — we'll give you a window the same day.</div>
+    </div>
+    <div class="process-step">
+      <div class="process-num">2</div>
+      <div class="process-title">We diagnose on-site</div>
+      <div class="process-text">A licensed tech inspects the issue and explains exactly what's needed.</div>
+    </div>
+    <div class="process-step">
+      <div class="process-num">3</div>
+      <div class="process-title">Upfront price, no surprises</div>
+      <div class="process-text">You approve the cost before any work begins. Always.</div>
+    </div>
+    <div class="process-step">
+      <div class="process-num">4</div>
+      <div class="process-title">Fixed right, guaranteed</div>
+      <div class="process-text">Every job backed by our 1-year workmanship warranty.</div>
+    </div>
+  </div>
+</section>
+
+<section class="work-section" id="work">
+  <div class="sec-head">
+    <p class="sec-eyebrow">Recent jobs</p>
+    <h2 class="sec-title">Real work, real results</h2>
+  </div>
+  <div class="work-grid">
+    <div class="work-item">
+      <img src="https://images.unsplash.com/photo-1607472829322-6093e3591b6a?w=400&q=85" alt="Pipe repair job" loading="lazy">
+      <div class="work-overlay"><span>Pipe replacement</span></div>
+    </div>
+    <div class="work-item">
+      <img src="https://images.unsplash.com/photo-1631545806609-91f0fc7b3fb0?w=400&q=85" alt="AC unit installation" loading="lazy">
+      <div class="work-overlay"><span>AC installation</span></div>
+    </div>
+    <div class="work-item">
+      <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=400&q=85" alt="Water heater job" loading="lazy">
+      <div class="work-overlay"><span>Water heater swap</span></div>
+    </div>
+    <div class="work-item">
+      <img src="https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=400&q=85" alt="Plumbing toolkit and van" loading="lazy">
+      <div class="work-overlay"><span>Service van ready</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="reviews" id="reviews">
+  <div class="sec-head">
+    <p class="sec-eyebrow">What Austin says</p>
+    <h2 class="sec-title">500+ five-star reviews</h2>
+  </div>
+  <div class="reviews-grid">
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">Called at 11pm with a burst pipe and they had someone here within the hour. Fixed it fast, fair price, no upsell games. Saving their number.</p>
+      <div class="review-author">
+        <div class="review-avatar">DT</div>
+        <div><div class="review-name">David Thompson</div><div class="review-loc">South Austin</div></div>
+      </div>
+    </div>
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">Our AC died in July — they came same day, explained everything clearly, and didn't try to sell us a whole new system we didn't need.</p>
+      <div class="review-author">
+        <div class="review-avatar">ML</div>
+        <div><div class="review-name">Maria Lopez</div><div class="review-loc">Cedar Park</div></div>
+      </div>
+    </div>
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">Honestly the most professional contractor experience I've had. Clean work, on time, upfront pricing exactly as quoted. Highly recommend.</p>
+      <div class="review-author">
+        <div class="review-avatar">JW</div>
+        <div><div class="review-name">James Walker</div><div class="review-loc">Round Rock</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="final-cta">
+  <div class="final-cta-bg"></div>
+  <div class="final-cta-pattern"></div>
+  <div class="final-cta-inner">
+    <h2 class="final-cta-title">Got a plumbing or HVAC<br>problem? <span>We're on it.</span></h2>
+    <p class="final-cta-sub">Same-day appointments available. Licensed, insured, and ready to help.</p>
+    <div class="final-cta-btns">
+      <a href="tel:+15125550173" class="btn-cta">📞 Call (512) 555-0173</a>
+      <a href="mailto:hello@sterlingplumbing.com" class="btn-secondary">Email Us</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="f-logo">
+        <div class="logo-mark">S</div>
+        <div class="logo-text" style="color:white">Sterling<span>Plumbing &amp; HVAC</span></div>
+      </div>
+      <p class="f-tagline">Licensed plumbing and HVAC contractors serving Austin and surrounding areas since 2011.</p>
+    </div>
+    <div>
+      <div class="f-title">Services</div>
+      <div class="f-links">
+        <a href="#">Emergency Plumbing</a>
+        <a href="#">AC &amp; Heating Repair</a>
+        <a href="#">Water Heater Install</a>
+        <a href="#">Drain Cleaning</a>
+      </div>
+    </div>
+    <div>
+      <div class="f-title">Service Area</div>
+      <div class="f-links">
+        <a href="#">Austin</a>
+        <a href="#">Round Rock</a>
+        <a href="#">Cedar Park</a>
+        <a href="#">Georgetown</a>
+      </div>
+    </div>
+    <div>
+      <div class="f-title">Contact</div>
+      <div class="f-links">
+        <a href="tel:+15125550173">(512) 555-0173</a>
+        <a href="mailto:hello@sterlingplumbing.com">hello@sterlingplumbing.com</a>
+        <a href="#">License #PL-48291</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 Sterling Plumbing &amp; HVAC. All rights reserved.</span>
+    <span class="cred">Website by YourName.dev</span>
+  </div>
+</footer>
+
+<script>
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      const delay = e.target.dataset.d || 0;
+      setTimeout(() => e.target.classList.add('vis'), +delay);
+    }
+  });
+}, {threshold: 0.12});
+
+document.querySelectorAll('.tband-item').forEach((el,i)=>{el.dataset.d=i*90;io.observe(el)});
+document.querySelectorAll('.service-card').forEach((el,i)=>{el.dataset.d=i*130;io.observe(el)});
+document.querySelectorAll('.process-step').forEach((el,i)=>{el.dataset.d=i*110;io.observe(el)});
+document.querySelectorAll('.work-item').forEach((el,i)=>{el.dataset.d=i*90;io.observe(el)});
+document.querySelectorAll('.review-card').forEach((el,i)=>{el.dataset.d=i*110;io.observe(el)});
+</script>
+</body>
+</html>
